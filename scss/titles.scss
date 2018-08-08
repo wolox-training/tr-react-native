@@ -3,17 +3,18 @@ $title-font: "Roboto", sans-serif;
 .title {
   color: black;
   font-size: $title-size;
-  font-style: $title-font;
+  font-family: $title-font;
   line-height: 30px;
   position: relative;
-  padding: 0 0 0 10px;
-
-
 }
 
-.title::before{
-  content: url("assets/triangle.svg");
+.title::before {
+  content: url(assets/triangle.svg);
   display: inline-block;
-  height: $title-decoration-height;
-  width: $title-decoration-width;
+  height: 90px;
+  left: 22px;
+  bottom: 30px;
+  position: relative;
+  top: 30px;
+  width: 70px;
 }
