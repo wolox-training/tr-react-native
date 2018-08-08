@@ -7,7 +7,6 @@
     width: $tech-logo-size;
     height: $tech-logo-size;
   }
-
 }
 
 .tech-subtitle {
@@ -24,17 +23,16 @@
   flex-flow: column wrap;
   height: 90%;
   justify-content: space-around;
-  position: relative;
+  position: absolute;
   padding: 10px 25px 30px 25px;
   text-align: center;
   width: 90%;
-}
 
-
-.tech-container::before {
-  border: 2px solid $green;
-  padding: 0 10px 10px;
-  position: absolute;
-  content: "";
-  z-index: -1;
+  &::before {
+    border: 2px solid $green;
+    padding: 0 10px 10px 0;
+    position: relative;
+    content: "";
+    z-index: -1;
+  }
 }
