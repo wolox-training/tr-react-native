@@ -6,12 +6,14 @@ $title-font: "Roboto", sans-serif;
   font-style: $title-font;
   line-height: 30px;
   position: relative;
+  padding: 0 0 0 10px;
 
 
 }
 
-.title-img {
-
+.title::before{
+  content: url("assets/triangle.svg");
+  display: inline-block;
   height: $title-decoration-height;
   width: $title-decoration-width;
 }
