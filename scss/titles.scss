@@ -1,20 +1,27 @@
-$title-size: 30px;
-$title-font: "Roboto", sans-serif;
-.title {
+.tech-title {
   color: black;
   font-size: $title-size;
   font-family: $title-font;
   line-height: 30px;
+  left: 20px;
   position: relative;
+
+  &::before{
+    background: url(assets/triangle.svg) no-repeat;
+    content: "";
+    height: $title-decoration-height;
+    width: $title-decoration-width;
+    left: -50px;
+    top: -30px;
+    position: absolute;
+    z-index: -1;
+  }
 }
 
-.title::before {
-  content: url(assets/triangle.svg);
-  display: inline-block;
-  height: 90px;
-  left: 22px;
-  bottom: 30px;
-  position: relative;
-  top: 30px;
-  width: 70px;
+
+.body-container {
+margin: 0 auto;
+max-width: 1280px;
+padding: 100px 40px;
+width: 100%;
 }
