@@ -40,4 +40,16 @@
     top: -12px;
     border-radius: 6px;
   }
+  &:hover::before {
+    border: 1px solid #BED23C;
+    position: absolute;
+    content: "";
+    z-index: -1;
+    height: 350px;
+    width: 245px;
+    left: 12px;
+    top: 12px;
+    border-radius: 6px;
+  }
+
 }
