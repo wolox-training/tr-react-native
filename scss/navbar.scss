@@ -7,22 +7,15 @@
 }
 
 .navbar {
-  margin: 0 10% 0 50px;
+  margin: 0;
   position: fixed;
-  width: 90%;
+  width: 100%;
   height: $nav-height;
   text-align: right;
   z-index: 1;
   font-size: $text-big;
   background-color: white;
-
-  &::before {
-    position:fixed;
-    width: 100%;
-    height: 100%;
-    top: 10px;
-    background-color: $grey;
-  }
+  box-shadow: 0 10px 10px 0 $grey;
 
   .nav-img {
     @extend %nav-item;
@@ -30,9 +23,11 @@
     background-image:url("assets/wolox_logo.svg");
     height: $nav-logo-height;
     width: $nav-logo-width;
+    left: 10px;
   }
 
   .nav-text {
     @extend %nav-item;
+    right: 10px;
   }
 }
