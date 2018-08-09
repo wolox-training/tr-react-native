@@ -17,26 +17,26 @@
 
 .tech-container {
   align-items: center;
-  background-color: $green;
+  background-color: #BED23C;
   border-radius: 6px;
   display: inline-flex;
   flex-flow: column wrap;
-  height: 400px;
+  height: 350px;
   justify-content: space-around;
   position: relative;
-  padding: 10px 25px 30px 25px;
+  padding: 20px 40px 50px 35px;
   text-align: center;
-  width: 250px;
+  width: 240px;
 
   &::before {
-    border: 2px solid #BED23C;
+    border: 1px solid #BED23C;
     position: absolute;
     content: "";
     z-index: -1;
     height: 100%;
     width: 100%;
-    left: -15px;
-    top: -15px;
+    left: -12px;
+    top: -12px;
     border-radius: 6px;
   }
 }
