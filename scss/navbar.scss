@@ -1,0 +1,38 @@
+%nav-item {
+  position: relative;
+  top: 30px;
+  bottom: 30px;
+  line-height: 30px;
+  display: inline-block;
+}
+
+.navbar {
+  margin: 0 10% 0 50px;
+  position: fixed;
+  width: 90%;
+  height: $nav-height;
+  text-align: right;
+  z-index: 1;
+  font-size: $text-big;
+  background-color: white;
+
+  &::before {
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    background-color: $grey;
+  }
+
+  .nav-img {
+    @extend %nav-item;
+    float:left;
+    background-image:url("assets/wolox_logo.svg");
+    height: $nav-logo-height;
+    width: $nav-logo-width;
+  }
+
+  .nav-text {
+    @extend %nav-item;
+  }
+}
