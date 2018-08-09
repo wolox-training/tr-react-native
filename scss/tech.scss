@@ -1,7 +1,7 @@
 .tech {
-  height: 400px;
-  width: 250px;
-  margin: 30px 30px 30px 30px;
+  margin: 55px 30px 30px 30px;
+  display: flex;
+  flex-flow: row wrap;
 
   img {
     width: $tech-logo-size;
@@ -23,18 +23,19 @@
   flex-flow: column wrap;
   height: 350px;
   justify-content: space-around;
+  margin: 40px 20px 40px 20px;
   position: relative;
-  padding: 20px 40px 50px 35px;
+  padding: 0px 35px 40px 30px;
   text-align: center;
-  width: 240px;
+  width: 245px;
 
   &::before {
     border: 1px solid #BED23C;
     position: absolute;
     content: "";
     z-index: -1;
-    height: 100%;
-    width: 100%;
+    height: 350px;
+    width: 245px;
     left: -12px;
     top: -12px;
     border-radius: 6px;
