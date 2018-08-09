@@ -29,10 +29,14 @@
   width: 250px;
 
   &::before {
-    border: 2px solid $green;
-    padding: 0 10px 10px 0;
+    border: 2px solid #BED23C;
     position: absolute;
     content: "";
     z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: -15px;
+    top: -15px;
+    border-radius: 6px;
   }
 }
