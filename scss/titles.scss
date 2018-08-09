@@ -1,0 +1,25 @@
+.tech-title {
+  font-size: $title-size;
+  line-height: 30px;
+  left: 20px;
+  position: relative;
+
+  &::before {
+    background: url(assets/triangle.svg) no-repeat;
+    content: "";
+    height: $title-decoration-height;
+    width: $title-decoration-width;
+    left: -50px;
+    top: -30px;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+
+.body-container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 100px 40px;
+  width: 100%;
+}
