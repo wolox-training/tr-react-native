@@ -2,31 +2,42 @@
   height: 400px;
   width: 250px;
   margin: 30px 30px 30px 30px;
+}
 
-  img {
+.tech-img {
     width: $tech-logo-size;
     height: $tech-logo-size;
   }
-}
 
 .tech-subtitle {
   font-size: $text-medium;
   position: relative;
-  top: -10px;
+  margin: 10px auto;
+}
+.tech-bold {
+    font-size: $text-medium;
+    position: relative;
+    margin: 0 0 20px 0;
+    font-weight: bold;
 }
 
+.tech-description {
+  font-size: $text-small;
+  text-align: center;
+  margin: 10px auto;
+}
 .tech-container {
   align-items: center;
   background-color: #BED23C;
   border-radius: 6px;
   display: inline-flex;
   flex-flow: column wrap;
-  height: 350px;
-  justify-content: space-around;
+  height: 310px;
+  justify-content: flex-start;
   position: relative;
-  padding: 20px 40px 50px 35px;
+  padding: 10px 40px 30px 15px;
   text-align: center;
-  width: 240px;
+  width: 210px;
 
   &::before {
     border: 1px solid #BED23C;
