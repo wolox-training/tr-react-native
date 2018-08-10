@@ -1,11 +1,28 @@
 .tech-footer {
-  height: 200px;
-  width: 100%;
+  align-items: center;
   background-color: $blue;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-title {
+  color: white;
+  font-size: $text-big;
 }
 
 .footer-img {
   background-image: url("assets/wolox_logo_white.svg");
+  height: 60px;
+  margin-top: 20px;
+  width: 400px;
 }
 
-.footer-msg {}
+.footer-msg {
+  align-self: flex-end;
+  color:white;
+  margin-top: 20px;
+  padding-right: 20px;
+}
