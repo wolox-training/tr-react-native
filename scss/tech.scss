@@ -5,26 +5,25 @@
 }
 
 .tech-img {
-    height: $tech-logo-size;
-    width: $tech-logo-size;
+  height: $tech-logo-size;
+  width: $tech-logo-size;
 }
 
 .tech-subtitle {
-  font-size: $text-medium;
+  font-size: $text-small;
   margin: 10px auto;
-  position: relative;
 }
 .tech-bold {
-  font-size: $text-medium;
+  font-size: $text-small;
   font-weight: bold;
   margin-bottom: 20px;
-  position: relative;
 }
 
 .tech-description {
   font-size: $text-small;
-  margin: 10px auto;
+  margin: 0 10px;
   text-align: center;
+  width: 150px;
 }
 
 .tech {
@@ -33,20 +32,18 @@
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  height: 310px;
-  justify-content: flex-start;
-  padding: 10px 40px 30px 15px;
+  height: 275px;
   position: relative;
-  width: 210px;
+  width: 190px;
 
   &::before {
     border: 1px solid $green;
     border-radius: 6px;
     content: "";
     height: 100%;
-    left: -12px;
+    left: -8px;
     position: absolute;
-    top: -12px;
+    top: -8px;
     width: 100%;
     z-index: -1;
   }
