@@ -1,4 +1,4 @@
-.tech {
+.tech-container {
   height: 400px;
   width: 250px;
   margin: 30px 30px 30px 30px;
@@ -26,21 +26,21 @@
   text-align: center;
   margin: 10px auto;
 }
-.tech-container {
+
+.tech {
   align-items: center;
-  background-color: #BED23C;
+  background-color: $green;
   border-radius: 6px;
-  display: inline-flex;
-  flex-flow: column wrap;
+  display: flex;
+  flex-direction: column;
   height: 310px;
   justify-content: flex-start;
   position: relative;
   padding: 10px 40px 30px 15px;
-  text-align: center;
   width: 210px;
 
   &::before {
-    border: 1px solid #BED23C;
+    border: 1px solid $green;
     position: absolute;
     content: "";
     z-index: -1;
