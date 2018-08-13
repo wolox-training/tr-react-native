@@ -55,13 +55,13 @@
 
   &:hover::before {
     border: 1px solid #BED23C;
-    position: absolute;
-    content: "";
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    left: 8px;
-    top: 8px;
     border-radius: 6px;
+    content: "";
+    height: 100%;
+    left: 8px;
+    position: absolute;
+    top: 8px;
+    width: 100%;
+    z-index: -1;
   }
 }
