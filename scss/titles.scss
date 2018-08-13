@@ -1,7 +1,6 @@
 .tech-title {
   color: black;
   font-size: $title-size;
-  font-family: $title-font;
   line-height: 30px;
   left: 20px;
   position: relative;
@@ -16,12 +15,4 @@
     position: absolute;
     z-index: -1;
   }
-}
-
-
-.body-container {
-  margin: 0 auto;
-  max-width: 1280px;
-  padding: 150px 40px;
-  width: 100%;
 }
