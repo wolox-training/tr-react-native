@@ -1,10 +1,7 @@
 .tech-container {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   padding: 30px;
-  max-width: 1000px;
-
 }
 
 .tech-img {
@@ -34,11 +31,11 @@
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  height: 275px;
+  height: 300px;
   margin: 10px 20px;
-  padding: 10px;
+  padding: 12px;
   position: relative;
-  width: 190px;
+  width: 200px;
 
 
   &::before {
