@@ -1,11 +1,10 @@
 .tech-title {
-  color: black;
   font-size: $title-size;
   line-height: 30px;
   left: 20px;
   position: relative;
 
-  &::before{
+  &::before {
     background: url(assets/triangle.svg) no-repeat;
     content: "";
     height: $title-decoration-height;
