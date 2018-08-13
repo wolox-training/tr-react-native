@@ -48,6 +48,8 @@
     top: -8px;
     width: 100%;
     z-index: -1;
+    transition: top 0.2s, left 0.2s;
+    transition-timing-function: linear;
   }
 
   &:hover::before {
