@@ -48,5 +48,13 @@
     top: -8px;
     width: 100%;
     z-index: -1;
+    transition: top 0.8s, left 0.8s;
+  }
+
+  &:hover {
+    &::before {
+      left: 8px;
+      top: 8px;
+    }
   }
 }
