@@ -48,19 +48,13 @@
     top: -8px;
     width: 100%;
     z-index: -1;
-    transition: top 0.2s, left 0.2s;
-    transition-timing-function: linear;
+    transition: top 0.8s, left 0.8s;
   }
 
-  &:hover::before {
-    border: 1px solid #BED23C;
-    border-radius: 6px;
-    content: "";
-    height: 100%;
-    left: 8px;
-    position: absolute;
-    top: 8px;
-    width: 100%;
-    z-index: -1;
+  &:hover {
+    &::before {
+      left: 8px;
+      top: 8px;
+    }
   }
 }
