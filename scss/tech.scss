@@ -1,5 +1,6 @@
 .tech-container {
   display: flex;
+<<<<<<< HEAD
   flex-flow: row wrap;
   justify-content: flex-start;
   padding: 30px;
@@ -7,6 +8,12 @@
 
 }
 
+=======
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+>>>>>>> master
 .tech-img {
   height: $tech-logo-size;
   width: $tech-logo-size;
@@ -34,16 +41,25 @@
   border-radius: 6px;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   height: 275px;
   margin: 20px;
   padding: 10px;
   position: relative;
   width: 190px;
+=======
+  height: 300px;
+  margin: 10px 20px;
+  padding: 12px;
+  position: relative;
+  width: 200px;
+>>>>>>> master
 
 
   &::before {
     border: 1px solid $green;
     border-radius: 6px;
+<<<<<<< HEAD
     content: "";
     height: 100%;
     left: -8px;
@@ -64,4 +80,22 @@
     width: 100%;
     z-index: -1;
   }
+=======
+    content: "";
+    height: 100%;
+    left: -8px;
+    position: absolute;
+    top: -8px;
+    width: 100%;
+    z-index: -1;
+    transition: top 0.8s, left 0.8s;
+  }
+
+  &:hover {
+    &::before {
+      left: 8px;
+      top: 8px;
+    }
+  }
+>>>>>>> master
 }
