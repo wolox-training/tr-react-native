@@ -1,7 +1,7 @@
 %nav-item {
-  position: relative;
-  line-height: 30px;
   display: inline-block;
+  line-height: 30px;
+  position: relative;
 }
 
 .navbar {
@@ -18,9 +18,9 @@
 
   .nav-img {
     @extend %nav-item;
-    float:left;
     background-image:url("assets/wolox_logo.svg");
     background-repeat: no-repeat;
+    float:left;
     height: $nav-logo-height;
     width: $nav-logo-width;
   }
