@@ -4,11 +4,12 @@
   display: flex;
   justify-content: space-between;
   height: $nav-height;
-  padding: 30px;
+  padding: 20px;
   position: fixed;
   width: 100%;
   z-index: 1;
 }
+
 .nav-img {
   position: relative;
   background-image: url("assets/wolox_logo.svg");
