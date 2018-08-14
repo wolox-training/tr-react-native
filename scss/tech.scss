@@ -33,14 +33,13 @@
   display: grid;
   grid-template-rows: 100px 40px 35px auto;
   grid-auto-columns: 170px;
-  justify-items: center;
   height: 300px;
+  justify-items: center;
   margin: 10px 20px;
   padding: 12px;
   position: relative;
   width: 200px;
   text-align: center;
-
 
   &::before {
     border: 1px solid $green;
