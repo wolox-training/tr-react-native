@@ -3,7 +3,6 @@
   background-color: $blue;
   display: flex;
   flex-direction: column;
-  height: 200px;
   justify-content: center;
   padding: 20px;
 }
@@ -14,7 +13,6 @@
 }
 
 .footer-img {
-  background-image: url("assets/wolox_logo_white.svg");
   height: 60px;
   margin-top: 20px;
   width: 400px;
@@ -22,5 +20,5 @@
 
 .footer-msg {
   align-self: flex-end;
-  color:white;
+  color: white;
 }

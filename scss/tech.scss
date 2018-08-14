@@ -1,7 +1,7 @@
 .tech-container {
   display: grid;
   grid-template-columns: repeat(4,250px);
-  grid-template-rows: repeat(2,330px);
+  grid-template-rows: 330px 1fr;
   padding: 30px;
 }
 
