@@ -1,0 +1,25 @@
+.navbar {
+  background-color: white;
+  box-shadow: 0 10px 10px 0 $grey;
+  display: flex;
+  justify-content: space-between;
+  height: $nav-height;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-img {
+  position: relative;
+  background-image: url("assets/wolox_logo.svg");
+  height: $nav-logo-height;
+  width: $nav-logo-width;
+}
+
+.nav-text {
+  position: relative;
+  font-size: $text-big;
+  line-height: 30px;
+  padding-right: 10px;
+}
