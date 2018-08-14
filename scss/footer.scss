@@ -1,24 +1,24 @@
-.tech-footer {
+.footer {
   align-items: center;
   background-color: $blue;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-row: 1200px;
   justify-content: center;
+  text-align: center;
   padding: 20px;
 }
 
 .footer-title {
-  color: white;
+  color: $white;
   font-size: $text-big;
 }
 
 .footer-img {
-  height: 60px;
   margin-top: 20px;
   width: 400px;
 }
 
 .footer-msg {
-  align-self: flex-end;
-  color: white;
+  color: $white;
+  font-size: $text-small;
 }
