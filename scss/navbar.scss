@@ -1,29 +1,28 @@
 %nav-item {
   position: relative;
-  top: 30px;
-  bottom: 30px;
   line-height: 30px;
   display: inline-block;
 }
 
 .navbar {
-  margin: 0;
-  position: fixed;
-  width: 100%;
-  height: $nav-height;
-  text-align: right;
-  z-index: 1;
-  font-size: $text-big;
   background-color: white;
   box-shadow: 0 10px 10px 0 $grey;
+  font-size: $text-big;
+  height: $nav-height;
+  margin-bottom: 30px;
+  padding: 30px;
+  position: fixed;
+  text-align: right;
+  width: 100%;
+  z-index: 1;
 
   .nav-img {
     @extend %nav-item;
     float:left;
     background-image:url("assets/wolox_logo.svg");
+    background-repeat: no-repeat;
     height: $nav-logo-height;
     width: $nav-logo-width;
-    left: 10px;
   }
 
   .nav-text {
