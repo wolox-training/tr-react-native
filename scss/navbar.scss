@@ -1,33 +1,25 @@
-%nav-item {
-  bottom: 30px;
-  display: inline-block;
-  line-height: 30px;
-  position: relative;
-  top: 30px;
-}
-
 .navbar {
   background-color: white;
   box-shadow: 0 10px 10px 0 $grey;
-  font-size: $text-big;
+  display: flex;
+  justify-content: space-between;
   height: $nav-height;
-  margin: 0;
+  padding: 20px;
   position: fixed;
-  text-align: right;
   width: 100%;
   z-index: 1;
+}
 
-  .nav-img {
-    @extend %nav-item;
-    background-image:url("assets/wolox_logo.svg");
-    float:left;
-    height: $nav-logo-height;
-    left: 10px;
-    width: $nav-logo-width;
-  }
+.nav-img {
+  position: relative;
+  background-image: url("assets/wolox_logo.svg");
+  height: $nav-logo-height;
+  width: $nav-logo-width;
+}
 
-  .nav-text {
-    @extend %nav-item;
-    right: 10px;
-  }
+.nav-text {
+  position: relative;
+  font-size: $text-big;
+  line-height: 30px;
+  padding-right: 10px;
 }
