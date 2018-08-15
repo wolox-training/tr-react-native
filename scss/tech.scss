@@ -4,6 +4,16 @@
   grid-template-rows: repeat(2,300px);
   grid-column-gap: 1px $green;
   padding: 30px;
+
+
+  >:first-child {
+      grid-column: 1;
+      grid-row: 1/3;
+      align-self: center;
+  }
+  >:nth-child(even) {
+    border-left: solid 2px $green;
+  }
 }
 
 .tech-img {
@@ -39,16 +49,6 @@
   position: relative;
   width: 200px;
   text-align: center;
-
-  &:first-child {
-      grid-column: 1;
-      grid-row: 1/3;
-      align-self: center;
-  }
-  &:nth-child(even) {
-    border-left: solid 2px $green;
-  }
-
 }
 
 @media only screen and (max-width: 1024px) {
@@ -59,6 +59,16 @@
     grid-template-columns: 100%;
     padding: 30px;
     justify-items: center;
+
+    >:first-child {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: center;
+      border-top: none;
+    }
+    >:nth-child(even) {
+      border-left: none;
+    }
   }
 
   .tech {
@@ -68,14 +78,6 @@
     width: 30%;
     justify-content: center;
 
-    &:first-child {
-      grid-column: 1;
-      grid-row: 1;
-      align-self: center;
-      border-top: none;
-    }
-    &:nth-child(even) {
-      border-left: none;
-    }
+
   }
 }
