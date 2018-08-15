@@ -11,15 +11,21 @@
 }
 
 .nav-img {
-  position: relative;
   background-image: url("assets/wolox_logo.svg");
   height: $nav-logo-height;
   width: $nav-logo-width;
+  position: relative;
 }
 
 .nav-text {
-  position: relative;
   font-size: $text-big;
   line-height: 30px;
   padding-right: 10px;
+  position: relative;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nav-text {
+    text-indent: -9999px;
+  }
 }
