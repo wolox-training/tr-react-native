@@ -39,16 +39,14 @@
 
 .tech {
   align-items: center;
-  display: grid;
-  grid-template-rows: 100px 40px 35px auto;
-  grid-auto-columns: 170px;
+  display: flex;
+  flex-direction: column;
   height: 300px;
-  justify-items: center;
   margin: 10px 20px;
   padding: 12px 12px 12px 55px;
   position: relative;
-  width: 200px;
   text-align: center;
+  width: 200px;
 }
 
 @media only screen and (max-width: 1024px) {
