@@ -18,8 +18,8 @@
 }
 
 .footer-msg {
-  color: $white;
   align-self: flex-end;
+  color: $white;
   font-size: $text-small;
 }
 
@@ -34,7 +34,7 @@
   }
 
   .footer-msg {
-    margin-top: 40px;
     align-self: center;
+    margin-top: 40px;
   }
 }
