@@ -1,8 +1,7 @@
 .navbar {
   background-color: white;
   box-shadow: 0 10px 10px 0 $grey;
-  display: grid;
-  grid-template-columns: $nav-logo-width auto;
+  display: flex;
   justify-content: space-between;
   height: $nav-height;
   padding: 20px;
@@ -12,15 +11,15 @@
 }
 
 .nav-img {
+  position: relative;
   background-image: url("assets/wolox_logo.svg");
   height: $nav-logo-height;
   width: $nav-logo-width;
-  position: relative;
 }
 
 .nav-text {
+  position: relative;
   font-size: $text-big;
   line-height: 30px;
   padding-right: 10px;
-  position: relative;
 }
