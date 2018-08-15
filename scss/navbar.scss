@@ -11,14 +11,12 @@
 }
 
 .nav-img {
-  position: relative;
   background-image: url("assets/wolox_logo.svg");
   height: $nav-logo-height;
   width: $nav-logo-width;
 }
 
 .nav-text {
-  position: relative;
   font-size: $text-big;
   line-height: 30px;
   padding-right: 10px;
