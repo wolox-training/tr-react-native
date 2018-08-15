@@ -21,6 +21,7 @@
   font-size: $text-medium;
   margin: 10px auto;
 }
+
 .tech-bold {
   font-size: $text-small;
   font-weight: bold;
@@ -42,4 +43,22 @@
   padding: 12px;
   position: relative;
   width: 200px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .tech-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    .tech:first-child {
+      border:none;
+    }
+  }
+
+  .tech {
+    border-top: solid 2px $green;
+    justify-content: center;
+  }
 }
