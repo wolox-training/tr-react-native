@@ -64,7 +64,9 @@
   .tech {
     border: none;
     border-top: solid 2px $green;
-    padding: 12px;
+    padding: 30px 12px 12px 12px;
+    width: 30%;
+    justify-content: center;
 
     &:first-child {
       grid-column: 1;
