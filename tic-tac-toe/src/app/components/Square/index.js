@@ -5,9 +5,9 @@ import './index.css';
 class Square extends React.Component {
   render() {
     return (
-      <button className="square">
-        {/* TODO */}
-      </button>
+      <button className="square">{this.props.value}</button>
     );
   }
 }
+
+export default Square;
