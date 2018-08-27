@@ -1,4 +1,4 @@
-import { gameHandleClick } from '~redux/game/actions.js';
+import { gameJumpTo, gameHandleClick } from '~redux/game/actions.js';
 
 import { connect } from 'react-redux';
 import React from 'react';
@@ -12,6 +12,7 @@ class Game extends React.Component {
     const winner = this.props.winner;
     const moves = history.map((step, move) => {
       const desc = move ? `Go to move #${move}` : 'Go to game start';
+      console.log(move,step);
       return (
         <li key={move}>
           <button onClick={() => this.props.jumpTo(move)}>{desc}</button>
@@ -39,16 +40,14 @@ class Game extends React.Component {
 const mapStateToProps = state => ({
   history: state.history,
   xIsNext: state.xIsNext,
-  stepNumber: state.history.length,
+  stepNumber: state.history.length - 1,
   winner: state.winner
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    handleClick: i => dispatch(gameHandleClick(i)),
-    jumpTo: step => dispatch(gameHandleClick(step))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  handleClick: i => dispatch(gameHandleClick(i)),
+  jumpTo: step => dispatch(gameJumpTo(step))
+});
 
 export default connect(
   mapStateToProps,

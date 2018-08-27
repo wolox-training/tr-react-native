@@ -1,20 +1,27 @@
 import React from 'react';
-import { Provider } from "react-redux";
-import { createStore, combineReducers } from "redux";
-import { reducer as gameReducer } from '~redux/game/reducers.js';
-//import { reducer as squareReducer } from "~redux/squareReducer/reducer";
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
+import { handleClick as gameReducer } from '~redux/game/reducers.js';
 
 import Game from '../Game';
 
-const initState = {}
-//const rootReducer = combineReducers(gameReducer,squareReducer);
-const store = createStore(initState,gameReducer);
+const initState = {
+  history: [{
+      squares: Array(9).fill(null)
+    }
+  ],
+  xIsNext: true,
+  stepNumber: 0,
+  winner: undefined
+};
+
+const store = createStore(gameReducer,initState);
 
 class App extends React.Component {
   render() {
     return (
-      <Provider /*store={store}*/>
+      <Provider store={store}>
         <Game />
       </Provider>
     );

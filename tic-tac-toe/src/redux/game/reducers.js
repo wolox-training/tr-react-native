@@ -10,8 +10,8 @@ function calculateWinner(squares) {
 }
 
 // REDUCERS
-export function handleClick(state = [], action) {
-  const history = state.history.slice(0, this.props.stepNumber + 1);
+export function handleClick(state, action) {
+  const history = state.history.slice(0, state.stepNumber + 1);
   const current = history[history.length - 1];
   const squares = current.squares.slice();
   const i = action.index;
@@ -40,11 +40,12 @@ export function handleClick(state = [], action) {
         ...state,
         stepNumber: action.step,
         xIsNext: action.step % 2 === 0,
-        winner
+        winner,
+        history: state.history.slice(0, action.step + 1)
       };
     default:
       return state;
   }
 }
 
-export default reducers ???
+export default handleClick;
