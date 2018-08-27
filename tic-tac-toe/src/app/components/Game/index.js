@@ -5,8 +5,9 @@ import Board from '../Board';
 class Game extends React.Component {
   state = {
     history: [{
-      squares: Array(9).fill(null),
-    }],
+        squares: Array(9).fill(null)
+      }
+    ],
     xIsNext: true,
     stepNumber: 0,
   }
@@ -22,17 +23,18 @@ class Game extends React.Component {
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
       history: history.concat([{
-        squares: squares,
-      }]),
+          squares
+        }
+      ]),
       xIsNext: !this.state.xIsNext,
-      stepNumber: history.length,
+      stepNumber: history.length
     });
   }
 
   jumpTo(step) {
     this.setState({
       stepNumber: step,
-      xIsNext: (step % 2) === 0,
+      xIsNext: step % 2 === 0
     });
   }
 
