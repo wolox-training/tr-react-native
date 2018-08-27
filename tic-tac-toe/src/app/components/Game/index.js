@@ -20,7 +20,7 @@ class Game extends React.Component {
       );
     });
     let status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
-    if (winner) {
+    if (winner !== null) {
       status = `Winner: ${winner}`;
     }
     return (

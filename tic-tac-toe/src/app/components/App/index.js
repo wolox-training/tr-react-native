@@ -13,7 +13,7 @@ const initState = {
   ],
   xIsNext: true,
   stepNumber: 0,
-  winner: undefined
+  winner: null
 };
 
 const store = createStore(gameReducer,initState);

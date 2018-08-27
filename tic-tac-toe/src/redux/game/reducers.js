@@ -16,14 +16,18 @@ export function handleClick(state, action) {
   const squares = current.squares.slice();
   const i = action.index;
   const winner = calculateWinner(squares);
+  console.log(winner);
 
-  if (winner || squares[i]) {
-    return;
+  if (squares[i]) {
+    return state;
   }
 
   squares[i] = state.xIsNext ? 'X' : 'O';
   switch (action.type) {
     case 'SQUARE_CLICKED':
+      if (winner) {
+        return state;
+      }
       return {
         ...state,
         history: history.concat([
