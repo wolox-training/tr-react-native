@@ -1,16 +1,15 @@
-const X = 'X';
-const O = 'O';
+import { strings } from '~utils/strings.js';
 
 export function getStatus(winner, next) {
-  let status = `Next player: ${next ? X : O}`;
+  let status = strings.NEXT_PLAYER + (next ? strings.PLAYER_ONE : strings.PLAYER_TWO);
   if (winner) {
-    status = `Winner: ${winner}`;
+    status = strings.WINNER + winner;
   }
   return status;
 }
 
 export function goToMove(move) {
-  return move ? `Go to move #${move}` : 'Go to game start';
+  return move ? strings.MOVE_MSG + move : strings.MOVE_START;
 }
 
 export function calculateWinner(squares) {

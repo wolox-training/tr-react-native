@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
 import { calculateWinner, getStatus, goToMove } from '~utils/gameUtils';
+import { strings } from '~utils/strings.js';
 
 import Board from '../Board';
-
-const X = 'X';
-const O = 'O';
 
 class Game extends Component {
   state = {
@@ -37,7 +35,7 @@ class Game extends Component {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? X : O;
+    squares[i] = this.state.xIsNext ? strings.PLAYER_ONE : strings.PLAYER_TWO;
     this.setState({
       history: history.concat([
         {
