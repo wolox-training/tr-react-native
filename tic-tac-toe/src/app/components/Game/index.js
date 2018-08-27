@@ -12,7 +12,6 @@ class Game extends React.Component {
     const winner = this.props.winner;
     const moves = history.map((step, move) => {
       const desc = move ? `Go to move #${move}` : 'Go to game start';
-      console.log(move,step);
       return (
         <li key={move}>
           <button onClick={() => this.props.jumpTo(move)}>{desc}</button>
@@ -36,7 +35,6 @@ class Game extends React.Component {
     );
   }
 }
-
 
 Game.propTypes = {
   history: PropTypes.arrayOf(PropTypes.node),

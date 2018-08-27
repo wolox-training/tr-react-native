@@ -7,7 +7,8 @@ import { handleClick as gameReducer } from '~redux/game/reducers.js';
 import Game from '../Game';
 
 const initState = {
-  history: [{
+  history: [
+    {
       squares: Array(9).fill(null)
     }
   ],
@@ -16,7 +17,7 @@ const initState = {
   winner: null
 };
 
-const store = createStore(gameReducer,initState);
+const store = createStore(gameReducer, initState);
 
 class App extends React.Component {
   render() {
