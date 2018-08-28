@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import { calculateWinner, getStatus, goToMove } from '~utils/gameUtils';
-import { strings } from '~utils/strings.js';
+
+import strings from '~utils/strings.js';
 
 import Board from '../Board';
 

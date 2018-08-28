@@ -1,4 +1,4 @@
-import { strings } from '~utils/strings.js';
+import strings from '~utils/strings.js';
 
 export function getStatus(winner, next) {
   let status = strings.NEXT_PLAYER + (next ? strings.PLAYER_ONE : strings.PLAYER_TWO);
