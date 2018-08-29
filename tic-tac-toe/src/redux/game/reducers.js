@@ -53,7 +53,7 @@ export function handleClick(state = initState, action) {
         ...state,
         stepNumber: action.step,
         xIsNext: action.step % 2 === 0,
-        winner,
+        winner:calculateWinner(state.history.slice(0, action.step + 1).squares.slice()), //TODO: find a cleaner way to do this
         history: state.history.slice(0, action.step + 1)
       };
     default:
