@@ -1,7 +1,7 @@
 import { gameJumpTo, gameHandleClick } from '~redux/game/actions.js';
 
 import { connect } from 'react-redux';
-import { React, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import Board from '../Board';
 
