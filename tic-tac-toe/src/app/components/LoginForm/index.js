@@ -5,7 +5,6 @@ import { required, minLength, maxLength, asyncValidate } from '~utils/validation
 
 import { customInput } from './fields';
 
-
 class LoginForm extends Component {
   render() {
     const { handleSubmit } = this.props;
