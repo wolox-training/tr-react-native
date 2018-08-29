@@ -26,7 +26,6 @@ export function handleClick(state = initState, action) {
   const current = history[history.length - 1];
   const squares = current.squares.slice();
   const i = action.index;
-  const winner = calculateWinner(squares);
 
   if (squares[i]) {
     return state;
@@ -35,7 +34,7 @@ export function handleClick(state = initState, action) {
   squares[i] = state.xIsNext ? 'X' : 'O';
   switch (action.type) {
     case 'SQUARE_CLICKED':
-      if (winner) {
+      if (state.winner) {
         return state;
       }
       return {
@@ -47,7 +46,7 @@ export function handleClick(state = initState, action) {
         ]),
         xIsNext: !state.xIsNext,
         stepNumber: history.length,
-        winner
+        winner: calculateWinner(squares)
       };
     case 'HISTORY_ITEM_SELECTED':
       return {

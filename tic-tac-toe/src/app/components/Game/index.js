@@ -20,7 +20,7 @@ class Game extends Component {
       );
     });
     let status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
-    if (winner !== null) {
+    if (winner) {
       status = `Winner: ${winner}`;
     }
     return (
