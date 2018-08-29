@@ -21,7 +21,7 @@ class Game extends Component {
     return history.map((step, move) => {
       const desc = goToMove(move);
       return (
-        <li key={move}>
+        <li key={step}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );
