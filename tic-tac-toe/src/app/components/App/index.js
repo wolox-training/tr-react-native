@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { handleClick as gameReducer } from '~redux/game/reducers.js';
 
 import Game from '../Game';
-
+import LoginForm from '../LoginForm';
 
 const reducer = combineReducers({
   gameReducer,
@@ -23,6 +23,7 @@ class App extends React.Component {
         <Router>
           <Fragment>
             <Route path="/game" component={Game} />
+            <Route path="/" component={LoginForm} />
           </Fragment>
         </Router>
       </Provider>

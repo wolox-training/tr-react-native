@@ -5,8 +5,6 @@ import { required, minLength, maxLength, asyncValidate } from '~utils/validation
 
 import { customInput } from './fields';
 
-import './index.css';
-
 
 class LoginForm extends Component {
   render() {

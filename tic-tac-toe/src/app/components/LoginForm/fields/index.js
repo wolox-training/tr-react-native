@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 
-
 export const customInput = props => {
   const { label, input, type, meta } = props;
   return (
