@@ -8,23 +8,13 @@ import { handleClick as gameReducer } from '~redux/game/reducers.js';
 
 import Game from '../Game';
 
-const initState = {
-  history: [
-    {
-      squares: Array(9).fill(null)
-    }
-  ],
-  xIsNext: true,
-  stepNumber: 0,
-  winner: null
-};
-const reducer = combineReducers(gameReducer,formReducer);
-const store = createStore(
-  reducer,
-  initState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ &&
-  window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+
+const reducer = combineReducers({
+  gameReducer,
+  formReducer
+});
+
+const store = createStore(reducer);
 
 class App extends React.Component {
   render() {
@@ -32,7 +22,7 @@ class App extends React.Component {
       <Provider store={store}>
         <Router>
           <Fragment>
-            <Route path="/" component={Game} />
+            <Route path="/game" component={Game} />
           </Fragment>
         </Router>
       </Provider>

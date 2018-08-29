@@ -9,14 +9,24 @@ function calculateWinner(squares) {
   return null;
 }
 
+const initState = {
+  history: [
+    {
+      squares: Array(9).fill(null)
+    }
+  ],
+  xIsNext: true,
+  stepNumber: 0,
+  winner: null
+};
+
 // REDUCERS
-export function handleClick(state, action) {
+export function handleClick(state = initState, action) {
   const history = state.history.slice(0, state.stepNumber + 1);
   const current = history[history.length - 1];
   const squares = current.squares.slice();
   const i = action.index;
   const winner = calculateWinner(squares);
-  console.log(winner);
 
   if (squares[i]) {
     return state;
