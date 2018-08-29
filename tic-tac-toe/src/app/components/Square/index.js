@@ -1,15 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Square(props) {
+function Square({ onClick, value }) {
   return (
-    <button
-      className="square"
-      onClick={() => {
-        props.onClick();
-      }}
-    >
-      {props.value}
+    <button className="square" onClick={onClick}>
+      {value}
     </button>
   );
 }
