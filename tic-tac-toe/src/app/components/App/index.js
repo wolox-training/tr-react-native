@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { handleClick as gameReducer } from '~redux/game/reducers.js';
 
 import Game from '../Game';
-import LoginForm from '../LoginForm'
 
 const initState = {
   history: [
@@ -20,7 +19,7 @@ const initState = {
   winner: null
 };
 const reducer = combineReducers(gameReducer,formReducer);
-let store = createStore(
+const store = createStore(
   reducer,
   initState,
   window.__REDUX_DEVTOOLS_EXTENSION__ &&
@@ -33,8 +32,7 @@ class App extends React.Component {
       <Provider store={store}>
         <Router>
           <Fragment>
-            <Route path="/game" component={Game} />
-            <Route path="/" component={LoginForm} />
+            <Route path="/" component={Game} />
           </Fragment>
         </Router>
       </Provider>
