@@ -21,6 +21,7 @@ class Game extends Component {
     return history.map((step, move) => {
       const desc = goToMove(move);
       return (
+        // eslint-disable-next-line
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
