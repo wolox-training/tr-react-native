@@ -1,28 +1,12 @@
-.app {
-  text-align: center;
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
 }
 
-.app-logo {
-  animation: app-logo-spin infinite 20s linear;
-  height: 80px;
+ol, ul {
+  padding-left: 30px;
 }
 
-.app-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.app-title {
-  font-size: 1.5em;
-}
-
-.app-intro {
-  font-size: large;
-}
-
-@keyframes app-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.status {
+  margin-bottom: 10px;
 }
