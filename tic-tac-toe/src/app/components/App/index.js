@@ -5,18 +5,18 @@ import { reducer as formReducer } from 'redux-form';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { thunk } from 'react-thunk';
 
-import { handleClick as gameReducer } from '~redux/game/reducers.js';
+import reducer from '~redux/game/reducers.js';
 
 import Game from '../Game';
 import LoginForm from '../LoginForm';
 
-const reducer = combineReducers({
-  gameReducer,
+const rootReducer = combineReducers({
+  reducer,
   form: formReducer
 });
 
 const store = createStore(
-  reducer,
+  rootReducer,
   applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

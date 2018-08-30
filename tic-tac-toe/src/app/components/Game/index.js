@@ -1,4 +1,4 @@
-import { gameJumpTo, gameHandleClick } from '~redux/game/actions.js';
+import actionCreators  from '~redux/game/actions.js';
 
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
@@ -54,8 +54,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleClick: i => dispatch(gameHandleClick(i)),
-  jumpTo: step => dispatch(gameJumpTo(step))
+  handleClick: i => dispatch(actionCreators.gameHandleClick(i)),
+  jumpTo: step => dispatch(actionCreators.gameJumpTo(step))
 });
 
 export default connect(
