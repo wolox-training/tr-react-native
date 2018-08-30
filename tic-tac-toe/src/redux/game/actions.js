@@ -11,3 +11,18 @@ export function gameJumpTo(step) {
     step
   };
 }
+
+
+export const actionCreators = {
+  gameHandleClick,
+  gameJumpTo,
+  asyncRequest: () => async dispatch => {
+    dispatch({ type: actions.FETCH_USER_DATA });
+    const response = await getUserData();//Ver parte de API
+    if(response.ok) {
+      dispatch({ type: actions.SUBMIT, data: response.data });
+    } else {
+      dispatch({type: actions.REJECT, error: response.error });
+    }
+  }
+};

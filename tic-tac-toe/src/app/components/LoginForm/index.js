@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, SubmissionError } from 'redux-form';
 
-import { required, minLength, maxLength, asyncValidate } from '~utils/validation';
+import { required, minLength, asyncValidate, isValidMail } from '~utils/validation';
 
 import { customInput } from './fields';
 
-const validations = [required, minLength, maxLength];
+const userValidations = [required, isValidMail];
+const passValidations = [required, minLength];
 class LoginForm extends Component {
+  submit = values => {
+    window.alert(JSON.stringify(values));
+  };
+
   render() {
     return (
-      <form onSubmit={this.props.onSubmit}>
+      <form onSubmit={this.submit}>
         <Field
           name="username"
           component={customInput}
           type="text"
           label="Username"
-          validate={validations}
+          validate={userValidations}
         />
         <Field
           name="password"
           component={customInput}
           type="password"
           label="Password"
-          validate={validations}
+          validate={passValidations}
         />
         <button type="submit">Submit</button>
       </form>
@@ -33,7 +38,7 @@ class LoginForm extends Component {
 
 LoginForm = reduxForm({
   form: 'register',
-  validations,
+  validations: [userValidations,passValidations],
   asyncBlurFields: ['username']
 })(LoginForm);
 
