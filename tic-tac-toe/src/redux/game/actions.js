@@ -1,24 +1,10 @@
-export function gameHandleClick(i) {
-  return {
-    type: 'SQUARE_CLICKED',
-    index: i
-  };
-}
-
-export function gameJumpTo(step) {
-  return {
-    type: 'HISTORY_ITEM_SELECTED',
-    step
-  };
-}
-
 export const actions = {
   SQUARE_CLICKED: 'SQUARE_CLICKED',
   HISTORY_ITEM_SELECTED: 'HISTORY_ITEM_SELECTED'
-}
-
-
-export const actionCreators = {
-  gameHandleClick,
-  gameJumpTo
 };
+const actionCreators = {
+  gameHandleClick: index => ({ type: actions.SQUARE_CLICKED, index }),
+  gameJumpTo: index => ({ type: actions.HISTORY_ITEM_SELECTED, index })
+};
+
+export default actionCreators;
