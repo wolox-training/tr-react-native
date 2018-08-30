@@ -23,7 +23,7 @@ class App extends React.Component {
         <Router>
           <Fragment>
             <Route path="/game" component={Game} />
-            <Route path="/" component={LoginForm} />
+            <Route exact path="/" component={LoginForm} />
           </Fragment>
         </Router>
       </Provider>
