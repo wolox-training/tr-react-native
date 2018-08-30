@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
@@ -11,12 +11,12 @@ import LoginForm from '../LoginForm';
 
 const reducer = combineReducers({
   gameReducer,
-  formReducer
+  form: formReducer
 });
 
-const store = createStore(reducer);
+const store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <Provider store={store}>

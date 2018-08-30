@@ -4,7 +4,7 @@ import cx from 'classnames';
 export const customInput = props => {
   const { label, input, type, meta } = props;
   return (
-    <div className={customInput}>
+    <div>
       <input {...input} type={type} autoFocus={props.autoFocus} />
       <label>{label}</label>
       {meta.error &&
