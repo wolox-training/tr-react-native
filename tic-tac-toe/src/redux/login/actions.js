@@ -1,8 +1,13 @@
+import getUserData from '~src/services/UsersService';
+
 export const actions = {
   FETCH_USER_DATA: 'FETCH_USER_DATA',
   SUBMIT: 'SUBMIT',
   REJECT: 'REJECT'
 };
+
+export const function
+
 
 export const actionCreators = {
   asyncRequest: () => async dispatch => {
