@@ -1,32 +1,36 @@
-import actionCreators  from '~redux/game/actions.js';
+import actionCreators from '~redux/game/actions.js';
 
 import { connect } from 'react-redux';
-import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
+import React, { Component }from 'react';
+import PropTypes from 'prop-types';
+
+import { calculateWinner, getStatus, goToMove } from '~utils/gameUtils';
 
 import Board from '../Board';
 
 class Game extends Component {
-  render() {
-    const history = this.props.history;
-    const current = history[this.props.stepNumber];
-    const winner = this.props.winner;
-    const moves = history.map((step, move) => {
-      const desc = move ? `Go to move #${move}` : 'Go to game start';
+  getMoves(history) {
+    return history.map((step, move) => {
+      const desc = goToMove(move);
       return (
         <li key={move}>
           <button onClick={() => this.props.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
-    let status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
-    if (winner) {
-      status = `Winner: ${winner}`;
-    }
+  }
+
+  render() {
+    const history = this.props.history;
+    const current = history[this.props.stepNumber];
+    const winner = calculateWinner(current.squares);
+    const moves = this.getMoves(history);
+    const status = getStatus(winner, this.props.xIsNext);
+
     return (
       <div className="game">
         <div className="game-board">
-          <Board squares={current.squares} onClick={i => this.props.handleClick(i)} />
+          <Board squares={current.squares} onClick={this.props.handleClick} />
         </div>
         <div className="game-info">
           <div>{status}</div>
@@ -47,10 +51,10 @@ Game.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  history: state.gameReducer.history,
-  xIsNext: state.gameReducer.xIsNext,
-  stepNumber: state.gameReducer.history.length - 1,
-  winner: state.gameReducer.winner
+  history: state.history,
+  xIsNext: state.xIsNext,
+  stepNumber: state.history.length - 1,
+  winner: state.winner
 });
 
 const mapDispatchToProps = dispatch => ({
