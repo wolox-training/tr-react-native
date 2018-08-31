@@ -3,16 +3,19 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import thunk  from 'redux-thunk';
+import thunk from 'redux-thunk';
 
-import reducer from '~redux/game/reducers.js';
+import gameReducer from '~redux/game/reducers.js';
+
+import loginReducer from '~redux/login/reducers.js';
 
 import Game from '../Game';
 import FormContainer from '../FormContainer';
 
 const rootReducer = combineReducers({
-  reducer,
-  form: formReducer
+  game: gameReducer,
+  form: formReducer,
+  login: loginReducer
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(thunk)));

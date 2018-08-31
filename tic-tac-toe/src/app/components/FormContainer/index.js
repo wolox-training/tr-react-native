@@ -1,17 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom'
 
 import actionCreators from '~redux/login/actions';
 
 import LoginForm from '../LoginForm';
 
-function FormContainer({ handleSubmit }) {
-  return <LoginForm onSubmit={handleSubmit} />;
+function FormContainer({isValidUser, handleSubmit }) {
+  return isValidUser ? <Redirect to="/game" /> : <LoginForm onSubmit={handleSubmit} />;
 }
 
 FormContainer.propTypes = {
-  handleSubmit: PropTypes.func
+  handleSubmit: PropTypes.func,
+  isValidUser: PropTypes.bool
 };
 const mapDispatchToProps = dispatch => ({
   handleSubmit: values => {
@@ -20,8 +22,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  isValidUser: state.reducer.isValidUser,
-  loading: state.reducer.loading
+  isValidUser: state.login.isValidUser,
+  loading: state.login.loading
 });
 
 export default connect(

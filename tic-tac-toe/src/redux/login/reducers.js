@@ -4,7 +4,7 @@ import { actions } from '~redux/login/actions';
 const initState = {
   isValidUser: false,
   loading: false
-}
+};
 
 function reducer(state = initState, action) {
   switch(action.type) {
@@ -22,7 +22,7 @@ function reducer(state = initState, action) {
       return {
         ...state,
         isValidUser: false
-      }
+      };
   }
 }
 

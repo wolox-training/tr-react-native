@@ -2,5 +2,5 @@ import api from '~config/api';
 
 // VER QUE VA COMO RUTA
 export default {
-  getUserData: username => api.get('/users', { username })
+  getUserData: (user,password) => api.get('/users', { user,password })
 };
