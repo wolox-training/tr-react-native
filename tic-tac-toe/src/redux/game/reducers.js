@@ -15,7 +15,7 @@ const initState = {
 
 function reducer(state = initState, action) {
   const history = state.history.slice(0, state.stepNumber + 1);
-  const current = history[history.length-1];
+  const current = history[history.length - 1];
   const squares = current.squares.slice();
   const i = action.index;
   const winner = calculateWinner(squares);
