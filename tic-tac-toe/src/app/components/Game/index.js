@@ -21,7 +21,7 @@ class Game extends Component {
   }
 
   render() {
-    const { status, current, history, handleClick} = this.props;
+    const { status, current, history, handleClick } = this.props;
     const moves = this.getMoves(history);
 
     return (
