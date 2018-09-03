@@ -23,10 +23,8 @@ class Game extends Component {
   render() {
     const history = this.props.history;
     const current = history[this.props.stepNumber];
-    const winner = calculateWinner(current.squares);
     const moves = this.getMoves(history);
-    const status = getStatus(winner, this.props.xIsNext);
-
+    const status = this.props.status;
     return (
       <div className="game">
         <div className="game-board">
@@ -45,16 +43,15 @@ Game.propTypes = {
   history: PropTypes.arrayOf(PropTypes.node),
   handleClick: PropTypes.func,
   jumpTo: PropTypes.func,
-  stepNumber: PropTypes.int,
-  winner: PropTypes.string,
-  xIsNext: PropTypes.bool
+  stepNumber: PropTypes.int
 };
 
 const mapStateToProps = state => ({
   history: state.history,
   xIsNext: state.xIsNext,
   stepNumber: state.history.length - 1,
-  winner: state.winner
+  winner: state.winner,
+  status: getStatus(state.winner, state.xIsNext)
 });
 
 const mapDispatchToProps = dispatch => ({
