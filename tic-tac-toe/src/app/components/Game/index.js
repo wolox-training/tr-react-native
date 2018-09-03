@@ -1,32 +1,33 @@
-import { gameJumpTo, gameHandleClick } from '~redux/game/actions.js';
-
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
+
+import actionCreators from '~redux/game/actions.js';
+
+import { getStatus, goToMove } from '~utils/gameUtils';
 
 import Board from '../Board';
 
 class Game extends Component {
-  render() {
-    const history = this.props.history;
-    const current = history[this.props.stepNumber];
-    const winner = this.props.winner;
-    const moves = history.map((step, move) => {
-      const desc = move ? `Go to move #${move}` : 'Go to game start';
+  getMoves(history) {
+    return history.map((step, move) => {
+      const desc = goToMove(move);
       return (
         <li key={move}>
           <button onClick={() => this.props.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
-    let status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
-    if (winner !== null) {
-      status = `Winner: ${winner}`;
-    }
+  }
+
+  render() {
+    const { status, current, history, handleClick } = this.props;
+    const moves = this.getMoves(history);
+
     return (
       <div className="game">
         <div className="game-board">
-          <Board squares={current.squares} onClick={i => this.props.handleClick(i)} />
+          <Board squares={current.squares} onClick={handleClick} />
         </div>
         <div className="game-info">
           <div>{status}</div>
@@ -39,23 +40,25 @@ class Game extends Component {
 
 Game.propTypes = {
   history: PropTypes.arrayOf(PropTypes.node),
-  handleClick: PropTypes.func,
-  jumpTo: PropTypes.func,
-  stepNumber: PropTypes.int,
-  winner: PropTypes.string,
-  xIsNext: PropTypes.bool
+  handleClick: PropTypes.func.isRequired,
+  jumpTo: PropTypes.func.isRequired,
+  stepNumber: PropTypes.number,
+  status: PropTypes.string,
+  current: PropTypes.arrayOf(PropTypes.string)
 };
 
 const mapStateToProps = state => ({
   history: state.history,
   xIsNext: state.xIsNext,
   stepNumber: state.history.length - 1,
-  winner: state.winner
+  winner: state.winner,
+  status: getStatus(state.winner, state.xIsNext),
+  current: state.history[state.stepNumber]
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleClick: i => dispatch(gameHandleClick(i)),
-  jumpTo: step => dispatch(gameJumpTo(step))
+  handleClick: i => dispatch(actionCreators.gameHandleClick(i)),
+  jumpTo: step => dispatch(actionCreators.gameJumpTo(step))
 });
 
 export default connect(
