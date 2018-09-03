@@ -27,7 +27,7 @@ function reducer(state = initState, action) {
 
   squares[i] = state.xIsNext ? strings.PLAYER_ONE : strings.PLAYER_TWO;
   const winner = calculateWinner(squares);
-
+  console.log(action);
   switch (action.type) {
     case actions.SQUARE_CLICKED:
       return {
