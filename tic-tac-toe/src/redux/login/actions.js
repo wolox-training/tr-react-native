@@ -1,4 +1,7 @@
+import { SubmissionError } from 'redux-form';
+
 import UsersService from '~services/UsersService.js';
+import strings from '~utils/strings';
 
 export const actions = {
   FETCH_USER_DATA: 'FETCH_USER_DATA',
@@ -14,6 +17,7 @@ export const actionCreators = {
       dispatch({ type: actions.ACCEPT, data: response.data });
     } else {
       dispatch({ type: actions.REJECT });
+      window.alert(strings.API_ERROR_MSG);
     }
   }
 };

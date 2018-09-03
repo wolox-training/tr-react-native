@@ -4,5 +4,6 @@ export default {
   MOVE_MSG: `Go to move `,
   MOVE_START: 'Go to game start',
   NEXT_PLAYER: 'Next player: ',
-  WINNER: 'Winner: '
+  WINNER: 'Winner: ',
+  API_ERROR_MSG: 'Invalid Username-Password combination'
 };

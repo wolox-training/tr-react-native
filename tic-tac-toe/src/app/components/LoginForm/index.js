@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Field, reduxForm, SubmissionError, Form } from 'redux-form';
+import { Field, reduxForm, Form } from 'redux-form';
 import { Link } from 'react-router-dom';
 
 import { required, minLength, isValidMail } from '~utils/validation';
