@@ -1,8 +1,8 @@
-import actionCreators from '~redux/game/actions.js';
-
 import { connect } from 'react-redux';
-import React, { Component }from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
+import actionCreators from '~redux/game/actions.js';
 
 import { calculateWinner, getStatus, goToMove } from '~utils/gameUtils';
 
