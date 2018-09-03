@@ -48,12 +48,12 @@ Game.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  history: state.history,
-  xIsNext: state.xIsNext,
-  stepNumber: state.history.length - 1,
-  winner: state.winner,
-  status: getStatus(state.winner, state.xIsNext),
-  current: state.history[state.stepNumber]
+  history: state.game.history,
+  xIsNext: state.game.xIsNext,
+  stepNumber: state.game.history.length - 1,
+  winner: state.game.winner,
+  status: getStatus(state.game.winner, state.game.xIsNext),
+  current: state.game.history[state.game.stepNumber]
 });
 
 const mapDispatchToProps = dispatch => ({

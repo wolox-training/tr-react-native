@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import thunk from 'redux-thunk';
 
 import gameReducer from '~redux/game/reducers.js';
