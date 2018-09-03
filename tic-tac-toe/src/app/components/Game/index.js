@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import actionCreators from '~redux/game/actions.js';
 
-import { calculateWinner, getStatus, goToMove } from '~utils/gameUtils';
+import { getStatus, goToMove } from '~utils/gameUtils';
 
 import Board from '../Board';
 
@@ -21,14 +21,13 @@ class Game extends Component {
   }
 
   render() {
-    const history = this.props.history;
-    const current = history[this.props.stepNumber];
+    const { status, current, history, handleClick} = this.props;
     const moves = this.getMoves(history);
-    const status = this.props.status;
+
     return (
       <div className="game">
         <div className="game-board">
-          <Board squares={current.squares} onClick={this.props.handleClick} />
+          <Board squares={current.squares} onClick={handleClick} />
         </div>
         <div className="game-info">
           <div>{status}</div>
@@ -41,9 +40,11 @@ class Game extends Component {
 
 Game.propTypes = {
   history: PropTypes.arrayOf(PropTypes.node),
-  handleClick: PropTypes.func,
-  jumpTo: PropTypes.func,
-  stepNumber: PropTypes.int
+  handleClick: PropTypes.func.isRequired,
+  jumpTo: PropTypes.func.isRequired,
+  stepNumber: PropTypes.number,
+  status: PropTypes.string,
+  current: PropTypes.arrayOf(PropTypes.string)
 };
 
 const mapStateToProps = state => ({
@@ -51,7 +52,8 @@ const mapStateToProps = state => ({
   xIsNext: state.xIsNext,
   stepNumber: state.history.length - 1,
   winner: state.winner,
-  status: getStatus(state.winner, state.xIsNext)
+  status: getStatus(state.winner, state.xIsNext),
+  current: state.history[state.stepNumber]
 });
 
 const mapDispatchToProps = dispatch => ({
