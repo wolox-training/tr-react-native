@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 
 import actionCreators from '~redux/login/actions';
 
 import LoginForm from '../LoginForm';
 
-function FormContainer({isValidUser, handleSubmit }) {
-  return isValidUser ? <Redirect to="/game" /> : <LoginForm onSubmit={handleSubmit} />;
+function FormContainer({ isValidUser, handleSubmit }) {
+  return isValidUser ? <Redirect replace to="/game" /> : <LoginForm onSubmit={handleSubmit} />;
 }
 
 FormContainer.propTypes = {

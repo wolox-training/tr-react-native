@@ -7,14 +7,14 @@ export const actions = {
 };
 
 export const actionCreators = {
-  asyncRequest: (user,pass) => async dispatch => {
-    const response = await UsersService.getUserData(user,pass); // Ver parte de API
-    if(response.ok && response.data.length) {
+  asyncRequest: values => async dispatch => {
+    const response = await UsersService.getUserData(values.username,values.password);
+
+    if (response.ok && response.data.length) {
       dispatch({ type: actions.ACCEPT, data: response.data });
     } else {
-      dispatch({type: actions.REJECT, error: response.error });
+      dispatch({ type: actions.REJECT });
     }
   }
-
 };
 export default actionCreators;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm, SubmissionError, Form } from 'redux-form';
 import { Link } from 'react-router-dom';
 
-import { required, minLength, asyncValidate, isValidMail } from '~utils/validation';
+import { required, minLength, isValidMail } from '~utils/validation';
 
 import { customInput } from './fields';
 
@@ -10,7 +10,7 @@ const userValidations = [required, isValidMail];
 const passValidations = [required, minLength];
 
 function LoginForm(props) {
-  const {handleSubmit} = props;
+  const { handleSubmit } = props;
   return (
     <Form onSubmit={handleSubmit}>
       <Field
@@ -33,12 +33,9 @@ function LoginForm(props) {
   );
 }
 
-
-
 LoginForm = reduxForm({
   form: 'register',
-  validations: [userValidations,passValidations],
-  asyncBlurFields: ['username']
+  validations: [userValidations,passValidations]
 })(LoginForm);
 
 export default LoginForm;
