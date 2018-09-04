@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import actionCreators from '~redux/game/actions.js';
@@ -7,6 +7,7 @@ import actionCreators from '~redux/game/actions.js';
 import { getStatus, goToMove } from '~utils/gameUtils';
 
 import Board from '../Board';
+import Topbar from '../Topbar';
 
 class Game extends Component {
   getMoves(history) {
@@ -25,15 +26,18 @@ class Game extends Component {
     const moves = this.getMoves(history);
 
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board squares={current.squares} onClick={handleClick} />
+      <Fragment>
+        <Topbar/>
+        <div className="game">
+          <div className="game-board">
+            <Board squares={current.squares} onClick={handleClick} />
+          </div>
+          <div className="game-info">
+            <div>{status}</div>
+            <ol>{moves}</ol>
+          </div>
         </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
+      </Fragment>
     );
   }
 }
@@ -48,12 +52,12 @@ Game.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  history: state.history,
-  xIsNext: state.xIsNext,
-  stepNumber: state.history.length - 1,
-  winner: state.winner,
-  status: getStatus(state.winner, state.xIsNext),
-  current: state.history[state.stepNumber]
+  history: state.game.history,
+  xIsNext: state.game.xIsNext,
+  stepNumber: state.game.history.length - 1,
+  winner: state.game.winner,
+  status: getStatus(state.game.winner, state.game.xIsNext),
+  current: state.game.history[state.game.stepNumber]
 });
 
 const mapDispatchToProps = dispatch => ({

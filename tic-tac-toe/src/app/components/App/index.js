@@ -5,6 +5,12 @@ import { reducer as formReducer } from 'redux-form';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import thunk from 'redux-thunk';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHistory } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faHistory);
+
 import gameReducer from '~redux/game/reducers.js';
 
 import loginReducer from '~redux/login/reducers.js';
