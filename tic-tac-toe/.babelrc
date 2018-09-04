@@ -9,9 +9,13 @@
         "~components": "./src/app/components",
         "~screens": "./src/app/screens",
         "~redux": "./src/redux",
+<<<<<<< HEAD
         "~utils": "./src/utils",
         "~services": "./src/services",
         "~config": "./src/config"
+=======
+        "~utils": "./src/utils"
+>>>>>>> master
       }
     }]
   ]

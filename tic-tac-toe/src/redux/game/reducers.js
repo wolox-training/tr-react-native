@@ -1,5 +1,7 @@
 import { calculateWinner } from '~utils/gameUtils';
 
+import strings from '~utils/strings';
+
 import { actions } from '~redux/game/actions';
 
 const initState = {
@@ -16,21 +18,18 @@ const initState = {
 function reducer(state = initState, action) {
   const history = state.history.slice(0, state.stepNumber + 1);
   const current = history[history.length - 1];
-  const squares = current.squares.slice();
+  const squares = [...current.squares];
   const i = action.index;
-  const winner = calculateWinner(squares);
 
-  if (squares[i]) {
+  if (squares[i] || (state.winner && action.type === actions.SQUARE_CLICKED)) {
     return state;
   }
 
-  squares[i] = state.xIsNext ? 'X' : 'O';
+  squares[i] = state.xIsNext ? strings.PLAYER_ONE : strings.PLAYER_TWO;
+  const winner = calculateWinner(squares);
 
   switch (action.type) {
     case actions.SQUARE_CLICKED:
-      if (winner) {
-        return state;
-      }
       return {
         ...state,
         history: history.concat([
