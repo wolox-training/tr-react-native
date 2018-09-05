@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, compose } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as formReducer } from 'redux-form';
@@ -27,7 +27,7 @@ class App extends Component {
         <Router>
           <Fragment>
             <Route path="/game" component={Game} />
-            <Route exact path="/" render={() => <FormContainer handleSubmit={this.submit}/>} />
+            <Route exact path="/" render={() => <FormContainer handleSubmit={this.submit} />} />
           </Fragment>
         </Router>
       </Provider>

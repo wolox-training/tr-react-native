@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Field, reduxForm, Form } from 'redux-form';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { required, minLength, isValidMail } from '~utils/validation';
 
@@ -33,9 +33,13 @@ function LoginForm(props) {
   );
 }
 
+LoginForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired
+};
+
 LoginForm = reduxForm({
   form: 'register',
-  validations: [userValidations,passValidations]
+  validations: [userValidations, passValidations]
 })(LoginForm);
 
 export default LoginForm;

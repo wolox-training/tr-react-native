@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const getValidityClassName = meta => {
   if (meta.asyncValidating) {
     return 'async-validating';
@@ -20,7 +19,7 @@ export const customInput = props => {
   const { label, input, type, meta } = props;
   return (
     <div className={getValidityClassName(meta)}>
-      <input {...input} type={type} autoFocus={props.autoFocus} />
+      <input {...input} type={type} />
       <label>{label}</label>
       {meta.error &&
         meta.touched &&
