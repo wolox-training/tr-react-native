@@ -22,3 +22,19 @@
   height: 30px;
   width: 30px;
 }
+
+.dd-wrapper {
+  @extend .topbar-button;
+  background-color: $white;
+  border-radius: 15px;
+  border-width: 2px;
+  border-color: black;
+  position: absolute;
+  right: 330px;
+  width: 140px;
+}
+
+
+.dd-list-item {
+  font-size: 18px;
+}

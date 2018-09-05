@@ -10,20 +10,8 @@ import Board from '../Board';
 import Topbar from '../Topbar';
 
 class Game extends Component {
-  getMoves(history) {
-    return history.map((step, move) => {
-      const desc = goToMove(move);
-      return (
-        <li key={move}>
-          <button onClick={() => this.props.jumpTo(move)}>{desc}</button>
-        </li>
-      );
-    });
-  }
-
   render() {
-    const { status, current, history, handleClick } = this.props;
-    const moves = this.getMoves(history);
+    const { current, handleClick } = this.props;
 
     return (
       <Fragment>
@@ -31,10 +19,6 @@ class Game extends Component {
         <div className="game">
           <div className="game-board">
             <Board squares={current.squares} onClick={handleClick} />
-          </div>
-          <div className="game-info">
-            <div>{status}</div>
-            <ol>{moves}</ol>
           </div>
         </div>
       </Fragment>

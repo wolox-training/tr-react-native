@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import actionCreators from '~redux/login/actions';
 
-import MoveList from '../MoveList';
+import Dropdown from '../Dropdown';
 
 class Topbar extends Component {
   render() {
@@ -12,7 +12,7 @@ class Topbar extends Component {
     return(
       <div className="topbar">
         <span className="topbar-text">WOLOX TIC-TAC-TOE</span>
-        <MoveList onClick={handleClick} className="topbar-button"/>
+        <Dropdown onClick={handleClick}  title="Move List" />
         <Link exact to="/history" onClick={handleClick} className="topbar-button">
           History
         </Link>
