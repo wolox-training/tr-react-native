@@ -10,6 +10,6 @@ class MoveList extends Component {
 
 MoveList.propTypes = {
   className: PropTypes.string
-}
+};
 
 export default MoveList;
