@@ -18,10 +18,7 @@ function reducer(state = initState, action) {
         isValidUser: false
       };
     default:
-      return {
-        ...state,
-        isValidUser: false
-      };
+      return state;
   }
 }
 

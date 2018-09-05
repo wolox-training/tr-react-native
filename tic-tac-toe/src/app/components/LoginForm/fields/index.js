@@ -15,7 +15,7 @@ const getValidityClassName = meta => {
   }
 };
 
-export const customInput = props => {
+function CustomInput(props) {
   const { label, input, type, meta } = props;
   return (
     <div className={getValidityClassName(meta)}>
@@ -26,4 +26,5 @@ export const customInput = props => {
         !meta.active && <div className="feedback-text error-text">{meta.error}</div>}
     </div>
   );
-};
+}
+export default CustomInput;

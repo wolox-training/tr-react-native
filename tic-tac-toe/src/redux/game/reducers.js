@@ -19,8 +19,11 @@ function reducer(state = initState, action) {
   const history = state.history.slice(0, state.stepNumber + 1);
   const current = history[history.length - 1];
   const squares = [...current.squares];
-  const i = action.index;
 
+  let i;
+  if (action.payload) {
+    i = action.payload.index;
+  }
   if (squares[i] || (state.winner && action.type === actions.SQUARE_CLICKED)) {
     return state;
   }
@@ -43,10 +46,10 @@ function reducer(state = initState, action) {
     case actions.HISTORY_ITEM_SELECTED:
       return {
         ...state,
-        stepNumber: action.index,
-        xIsNext: action.index % 2 === 0,
+        stepNumber: action.payload.index,
+        xIsNext: action.payload.index % 2 === 0,
         winner,
-        history: state.history.slice(0, action.index + 1)
+        history: state.history.slice(0, action.payload.index + 1)
       };
     default:
       return state;

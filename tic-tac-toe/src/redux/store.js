@@ -1,10 +1,19 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+import thunk from 'redux-thunk';
+import { compose } from 'react';
 
-import reducer from '~redux/game/reducers.js';
+import gameReducer from '~redux/game/reducers.js';
 
+import loginReducer from '~redux/login/reducers.js';
+
+const rootReducer = combineReducers({
+  game: gameReducer,
+  form: formReducer,
+  login: loginReducer
+});
 /* eslint-disable no-underscore-dangle */
-const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(thunk)));
+
 export default store;

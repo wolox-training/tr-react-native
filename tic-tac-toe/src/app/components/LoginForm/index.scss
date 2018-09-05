@@ -19,7 +19,7 @@ input:focus + label,
 .dirty input + label {
   font-size: 12px;
   top: -12px;
-  color: black;
+  color: $black;
 }
 
 input {
@@ -47,23 +47,23 @@ select,input,button[type='submit'] {
 }
 
 button[type='submit'] {
-  background-color: orange;
+  background-color: $orange;
   border-radius: 5px;
-  color: white;
+  color: $white;
   margin-top: 30px;
 }
 
 .valid input {
-  border-color: green;
+  border-color: $green;
 }
 
 .invalid input {
-  border-color: red;
+  border-color: $red;
 }
 
 .error-text {
-  background-color: red;
-  color: white;
+  background-color: $red;
+  color: $white;
   margin: 10px 0;
   position: relative;
 }
@@ -82,18 +82,18 @@ button[type='submit'] {
 
 @keyframes grey-pulse {
   0% {
-    border-color: grey;
+    border-color: $grey;
   }
   50% {
-    border-color: #eee;
+    border-color: #EEE;
   }
   100% {
-    border-color: grey;
+    border-color: $grey;
   }
 }
 
 .async-validating input {
-  border-color: gray;
+  border-color: $grey;
   animation-name: grey-pulse;
   animation-iteration-count: infinite;
   animation-duration: 1.4s;
