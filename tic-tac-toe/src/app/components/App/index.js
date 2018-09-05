@@ -2,14 +2,10 @@ import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import thunk from 'redux-thunk';
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHistory } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faHistory);
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHistory } from '@fortawesome/free-solid-svg-icons';
 
 import gameReducer from '~redux/game/reducers.js';
 
@@ -17,6 +13,8 @@ import loginReducer from '~redux/login/reducers.js';
 
 import Game from '../Game';
 import FormContainer from '../FormContainer';
+
+library.add(faHistory);
 
 const rootReducer = combineReducers({
   game: gameReducer,
@@ -33,7 +31,7 @@ class App extends Component {
         <Router>
           <Fragment>
             <Route path="/game" component={Game} />
-            <Route exact path="/" render={() => <FormContainer handleSubmit={this.submit}/>} />
+            <Route exact path="/" render={() => <FormContainer />} />
           </Fragment>
         </Router>
       </Provider>

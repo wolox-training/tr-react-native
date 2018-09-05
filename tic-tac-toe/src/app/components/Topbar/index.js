@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import actionCreators from '~redux/login/actions';
 
 import MoveList from '../MoveList';
 
 class Topbar extends Component {
   render() {
-    const { handleClick } = this.props;
+    const { handleClick, logoff } = this.props;
     return(
       <div className="topbar">
         <span className="topbar-text">WOLOX TIC-TAC-TOE</span>
@@ -16,9 +16,16 @@ class Topbar extends Component {
         <Link exact to="/history" onClick={handleClick} className="topbar-button">
           History
         </Link>
-        <Link to="/" onClick={handleClick} className="topbar-button">Logout</Link>
+        <Link to="/" handleClick={ logoff } className="topbar-button">Logout</Link>
       </div>
     );
   }
 }
-export default Topbar;
+
+const mapDispatchToProps = dispatch => ({
+  logoff: () => {
+    dispatch(actionCreators.logoff());
+  }
+});
+
+export default connect(mapDispatchToProps)(Topbar);

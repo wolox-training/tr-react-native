@@ -1,12 +1,11 @@
-import { SubmissionError } from 'redux-form';
-
 import UsersService from '~services/UsersService.js';
+
 import strings from '~utils/strings';
 
 export const actions = {
-  FETCH_USER_DATA: 'FETCH_USER_DATA',
   ACCEPT: 'ACCEPT',
-  REJECT: 'REJECT'
+  REJECT: 'REJECT',
+  LOGOFF: 'LOGOFF'
 };
 
 export const actionCreators = {
@@ -19,6 +18,9 @@ export const actionCreators = {
       dispatch({ type: actions.REJECT });
       window.alert(strings.API_ERROR_MSG);
     }
+  },
+  logoff: () => dispatch => {
+    dispatch({ type: actions.LOGOFF });
   }
 };
 export default actionCreators;
