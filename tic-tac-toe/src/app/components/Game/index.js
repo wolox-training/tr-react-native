@@ -27,7 +27,7 @@ class Game extends Component {
 
     return (
       <Fragment>
-        <Topbar/>
+        <Topbar />
         <div className="game">
           <div className="game-board">
             <Board squares={current.squares} onClick={handleClick} />
@@ -46,7 +46,6 @@ Game.propTypes = {
   history: PropTypes.arrayOf(PropTypes.node),
   handleClick: PropTypes.func.isRequired,
   jumpTo: PropTypes.func.isRequired,
-  stepNumber: PropTypes.number,
   status: PropTypes.string,
   current: PropTypes.arrayOf(PropTypes.string)
 };
