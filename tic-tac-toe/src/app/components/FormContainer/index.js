@@ -8,7 +8,6 @@ import actionCreators from '~redux/login/actions';
 import LoginForm from '../LoginForm';
 
 function FormContainer({ isValidUser, handleSubmit }) {
-  const validUser = window.localStorage.getItem('isValidUser') && isValidUser;
   return isValidUser === true ? <Redirect replace to="/game" /> : <LoginForm onSubmit={handleSubmit} />;
 }
 

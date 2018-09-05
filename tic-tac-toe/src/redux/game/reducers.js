@@ -41,14 +41,15 @@ function reducer(state = initState, action) {
         stepNumber: history.length,
         winner
       };
+
     case actions.HISTORY_ITEM_SELECTED:
       return {
-        ...state,
         stepNumber: action.index,
         xIsNext: action.index % 2 === 0,
-        winner,
+        winner: calculateWinner(history[action.index].squares),
         history: state.history.slice(0, action.index + 1)
       };
+
     default:
       return state;
   }

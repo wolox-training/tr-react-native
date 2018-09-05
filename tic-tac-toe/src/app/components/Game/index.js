@@ -4,21 +4,24 @@ import PropTypes from 'prop-types';
 
 import actionCreators from '~redux/game/actions.js';
 
-import { getStatus, goToMove } from '~utils/gameUtils';
+import { getStatus } from '~utils/gameUtils';
 
 import Board from '../Board';
 import Topbar from '../Topbar';
 
 class Game extends Component {
   render() {
-    const { current, handleClick } = this.props;
+    const { status, current, handleClick } = this.props;
 
     return (
       <Fragment>
-        <Topbar/>
+        <Topbar />
         <div className="game">
           <div className="game-board">
             <Board squares={current.squares} onClick={handleClick} />
+          </div>
+          <div className="game-info">
+            <div>{status}</div>
           </div>
         </div>
       </Fragment>
@@ -27,10 +30,7 @@ class Game extends Component {
 }
 
 Game.propTypes = {
-  history: PropTypes.arrayOf(PropTypes.node),
   handleClick: PropTypes.func.isRequired,
-  jumpTo: PropTypes.func.isRequired,
-  stepNumber: PropTypes.number,
   status: PropTypes.string,
   current: PropTypes.arrayOf(PropTypes.string)
 };

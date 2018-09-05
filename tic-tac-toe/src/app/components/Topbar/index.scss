@@ -7,8 +7,14 @@
 }
 
 .topbar-button {
+  background-color: $white;
+  border-radius: 15px;
+  border-width: 2px;
   font-size: 30px;
-  margin: 30px;
+  height: 50PX;
+  margin: 25px 5px;
+  text-align: center;
+  width: 190PX;;
 }
 
 .topbar-text {
@@ -25,13 +31,8 @@
 
 .dd-wrapper {
   @extend .topbar-button;
-  background-color: $white;
-  border-radius: 15px;
-  border-width: 2px;
-  border-color: black;
   position: absolute;
-  right: 330px;
-  width: 140px;
+  right: 420px;
 }
 
 

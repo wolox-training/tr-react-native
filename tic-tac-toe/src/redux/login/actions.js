@@ -10,7 +10,7 @@ export const actions = {
 
 export const actionCreators = {
   asyncRequest: values => async dispatch => {
-    const response = await UsersService.getUserData(values.username,values.password);
+    const response = await UsersService.getUserData(values.username, values.password);
 
     if (response.ok && response.data.length) {
       dispatch({ type: actions.ACCEPT, data: response.data });

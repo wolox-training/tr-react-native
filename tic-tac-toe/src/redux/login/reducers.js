@@ -1,13 +1,12 @@
 import { actions } from '~redux/login/actions';
 
-
 const initState = {
   isValidUser: false,
   loading: false
 };
 
 function reducer(state = initState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case actions.ACCEPT:
       window.localStorage.setItem('isValidUser', true);
       return {
@@ -24,7 +23,7 @@ function reducer(state = initState, action) {
       return {
         ...state,
         isValidUser: false
-      }
+      };
     default:
       return {
         ...state,
